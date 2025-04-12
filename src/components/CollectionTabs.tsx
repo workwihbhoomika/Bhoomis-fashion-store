@@ -1,5 +1,6 @@
 
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -12,7 +13,10 @@ const fashionStyles = [
   { id: "vintage", name: "Vintage", image: "https://images.unsplash.com/photo-1617922706483-86fa261a37db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" },
   { id: "classic", name: "Classic", image: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80" },
   { id: "streetwear", name: "Streetwear", image: "https://images.unsplash.com/photo-1583846783214-7229a91b20ed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1235&q=80" },
-  { id: "minimalist", name: "Minimalist", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" }
+  { id: "minimalist", name: "Minimalist", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" },
+  { id: "indian", name: "Indian", image: "https://images.unsplash.com/photo-1625758476104-f2ed6f0353a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" },
+  { id: "western", name: "Western", image: "https://images.unsplash.com/photo-1614093302611-8efc4de62aa2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" },
+  { id: "chinese", name: "Chinese", image: "https://images.unsplash.com/photo-1614098097306-cac6a9c45209?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" },
 ];
 
 const CollectionTabs = () => {
@@ -87,12 +91,17 @@ const CollectionTabs = () => {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[1, 2, 3].map((item) => (
-                  <FashionCard 
+                  <Link 
                     key={item}
-                    image={style.image}
-                    title={`${style.name} Collection ${item}`}
-                    description={`Explore our unique take on ${style.name.toLowerCase()} style.`}
-                  />
+                    to={`/collection/${style.id}`}
+                    className="block"
+                  >
+                    <FashionCard 
+                      image={style.image}
+                      title={`${style.name} Collection ${item}`}
+                      description={`Explore our unique take on ${style.name.toLowerCase()} style.`}
+                    />
+                  </Link>
                 ))}
               </div>
             </TabsContent>
@@ -113,7 +122,7 @@ const FashionCard = ({
   description: string;
 }) => {
   return (
-    <Card className="fashion-card border-none overflow-hidden">
+    <Card className="fashion-card border-none overflow-hidden group">
       <div className="relative h-80 overflow-hidden">
         <img
           src={image}
