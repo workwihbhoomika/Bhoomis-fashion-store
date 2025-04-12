@@ -123,7 +123,7 @@ const VideoCard = ({
   const [isPlaying, setIsPlaying] = useState(false);
   
   return (
-    <div className="fashion-card bg-gray-900 text-white overflow-hidden">
+    <div className="fashion-card bg-gray-900 text-white overflow-hidden group">
       {isPlaying ? (
         <div className="aspect-video">
           {platform === "youtube" ? (
@@ -151,7 +151,7 @@ const VideoCard = ({
           <img
             src={thumbnail}
             alt={title}
-            className="w-full h-full object-cover"
+            className="fashion-card-image"
           />
           <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
             <div className="w-16 h-16 bg-fashion-accent rounded-full flex items-center justify-center">
