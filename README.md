@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/093a580d-dfef-4dbf-b868-cb4a12cfaa60
+**URL**: https://design-one-mocha.vercel.app/
 
 ## How can I edit this code?
 
