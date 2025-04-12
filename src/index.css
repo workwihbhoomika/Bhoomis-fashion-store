@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -111,11 +110,19 @@
   }
   
   .fashion-card {
-    @apply overflow-hidden rounded-md group hover:shadow-lg transition-all duration-300;
+    @apply overflow-hidden rounded-md hover:shadow-lg transition-all duration-300;
+  }
+  
+  .fashion-card {
+    @apply group;
   }
   
   .fashion-card-image {
-    @apply w-full h-full object-cover transition-transform duration-500 group-hover:scale-105;
+    @apply w-full h-full object-cover transition-transform duration-500;
+  }
+  
+  .group:hover .fashion-card-image {
+    @apply scale-105;
   }
   
   .designer-quote {

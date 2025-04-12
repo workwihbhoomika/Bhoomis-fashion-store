@@ -6,28 +6,28 @@ const videos = [
   {
     id: 1,
     title: "Spring Collection 2025",
-    platform: "youtube",
+    platform: "youtube" as const,
     embedId: "dQw4w9WgXcQ",
     thumbnail: "https://images.unsplash.com/photo-1551803091-e20673f15770?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
   },
   {
     id: 2,
     title: "Behind The Scenes",
-    platform: "instagram",
+    platform: "instagram" as const,
     embedId: "CWgWZQA8GGA",
     thumbnail: "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
   },
   {
     id: 3,
     title: "Boho Style Lookbook",
-    platform: "youtube",
+    platform: "youtube" as const,
     embedId: "dQw4w9WgXcQ",
     thumbnail: "https://images.unsplash.com/photo-1611692314849-a5290caee02c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
   },
   {
     id: 4,
     title: "Quick Style Tips",
-    platform: "instagram",
+    platform: "instagram" as const,
     embedId: "CWgWZQA8GGA",
     thumbnail: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
   }
